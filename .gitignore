@@ -1,0 +1,18 @@
+# === Ambiente e credenciais ===
+.env
+
+# === Logs ===
+logs/
+*.log
+
+# === Arquivos temporários e cache do Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Configurações do sistema/editor ===
+*.swp
+*.swo
+.vscode/
+.idea/
