@@ -40,8 +40,9 @@ def filter_inactive_members(members):
     for member in members:
         member_last_logged_in = member.get('auth', {}).get('timestamps', {}).get('loggedin')
         member_last_logged_in = (parser.isoparse(member_last_logged_in)).date()
+        is_sleeping = member.get('preferences', {}).get('sleep')
         
-        if member_last_logged_in < seven_days_ago:
+        if member_last_logged_in < seven_days_ago and not is_sleeping:
             inactive_members.append(member)
 
     return inactive_members
